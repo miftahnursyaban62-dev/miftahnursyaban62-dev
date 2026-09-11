@@ -2,9 +2,21 @@
 
 Personal portfolio website yang dibangun untuk menampilkan profil, pengalaman kerja, pendidikan, keterampilan, dan informasi kontak secara profesional.
 
-## 🌐 Live Demo
+<p align="center">
+  <a href="https://miftahnursyaban62-dev.github.io/miftahnursyaban62-dev/">
+    <strong>🌐 View Live Portfolio</strong>
+  </a>
+  &nbsp;&nbsp;•&nbsp;&nbsp;
+  <a href="https://github.com/miftahnursyaban62-dev/miftahnursyaban62-dev">
+    <strong>💻 GitHub Repository</strong>
+  </a>
+</p>
 
-[View Portfolio](https://miftahnursyaban62-dev.github.io/miftahnursyaban62-dev/)
+<p align="center">
+  HTML5 • CSS3 • JavaScript • GitHub Pages
+</p>
+
+---
 
 ## 🛠️ Tech Stack
 
