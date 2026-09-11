@@ -1,0 +1,8 @@
+.server.pid
+server.log
+server.sh
+*-backup*.html
+*-before-*.html
+*-backup*.css
+*-before-*.css
+*-before-*.js

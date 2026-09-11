@@ -36,7 +36,11 @@
             <button type="button" class="lang-btn" data-lang="en" onclick="applyPortfolioLanguage('en')">EN</button>
         </div>
 
-        <button
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Ganti tema">
+    <span id="theme-icon">☀️</span>
+</button>
+
+<button
             class="menu-toggle"
             aria-label="Buka menu"
             aria-expanded="false"
@@ -145,45 +149,75 @@
 
             <div class="skills-grid">
 
-                <div class="skill-card">
-                    <h3 id="skill-1">Disiplin</h3>
+                <div class="skill-card skill-expandable" data-skill="discipline">
+                    <button type="button" class="skill-trigger" aria-expanded="false">
+                        <h3 id="skill-1">Disiplin</h3>
+                    </button>
                     <div class="skill-bar">
                         <span style="width: 90%;"></span>
                     </div>
+                    <div class="skill-detail">
+                        Terbiasa mengikuti SOP, bekerja sesuai target, menjaga konsistensi, dan bertanggung jawab terhadap pekerjaan.
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3 id="skill-2">Kerja Tim</h3>
+                <div class="skill-card skill-expandable" data-skill="teamwork">
+                    <button type="button" class="skill-trigger" aria-expanded="false">
+                        <h3 id="skill-2">Kerja Tim</h3>
+                    </button>
                     <div class="skill-bar">
                         <span style="width: 88%;"></span>
                     </div>
+                    <div class="skill-detail">
+                        Terbiasa bekerja bersama tim, berkomunikasi dengan baik, dan membantu menyelesaikan pekerjaan untuk mencapai target bersama.
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3 id="skill-3">Adaptasi</h3>
+                <div class="skill-card skill-expandable" data-skill="adaptation">
+                    <button type="button" class="skill-trigger" aria-expanded="false">
+                        <h3 id="skill-3">Adaptasi</h3>
+                    </button>
                     <div class="skill-bar">
                         <span style="width: 90%;"></span>
                     </div>
+                    <div class="skill-detail">
+                        Cepat beradaptasi dengan lingkungan, sistem kerja, dan tugas baru.
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3 id="skill-4">Manajemen Stock</h3>
+                <div class="skill-card skill-expandable" data-skill="stock">
+                    <button type="button" class="skill-trigger" aria-expanded="false">
+                        <h3 id="skill-4">Manajemen Stock</h3>
+                    </button>
                     <div class="skill-bar">
                         <span style="width: 82%;"></span>
                     </div>
-                </div>
-
-                <div class="skill-card">
-                    <h3 id="skill-5">Produksi</h3>
-                    <div class="skill-bar">
-                        <span style="width: 85%;"></span>
+                    <div class="skill-detail">
+                        Terbiasa melakukan pengecekan stok bahan, pencatatan, dan menjaga ketersediaan bahan sesuai kebutuhan.
                     </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3 id="skill-6">Kitchen Operation</h3>
+                <div class="skill-card skill-expandable" data-skill="production">
+                    <button type="button" class="skill-trigger" aria-expanded="false">
+                        <h3 id="skill-5">Produksi</h3>
+                    </button>
+                    <div class="skill-bar">
+                        <span style="width: 85%;"></span>
+                    </div>
+                    <div class="skill-detail">
+                        Memahami proses kerja produksi, mengikuti prosedur, menjaga kualitas, dan bekerja sesuai target.
+                    </div>
+                </div>
+
+                <div class="skill-card skill-expandable" data-skill="kitchen">
+                    <button type="button" class="skill-trigger" aria-expanded="false">
+                        <h3 id="skill-6">Kitchen Operation</h3>
+                    </button>
                     <div class="skill-bar">
                         <span style="width: 80%;"></span>
+                    </div>
+                    <div class="skill-detail">
+                        Terbiasa melakukan persiapan bahan, mengikuti SOP, menjaga kebersihan, dan mendukung kelancaran operasional dapur.
                     </div>
                 </div>
 
@@ -200,18 +234,12 @@
             </div>
 
             <div class="experience-list">
-
                 <article class="experience-card">
-
                     <div class="experience-number">01</div>
-
                     <div>
                         <span class="experience-duration">9 Bulan</span>
-
                         <h3>PT Garyman Kreasi Indonesia</h3>
-
                         <h4 id="exp-role-1">Operator Produksi</h4>
-
                         <p>
                             Berpengalaman dalam menjalankan proses produksi,
                             mengikuti prosedur kerja, menjaga kualitas hasil
@@ -219,20 +247,14 @@
                             ketelitian, keselamatan, dan target kerja.
                         </p>
                     </div>
-
                 </article>
 
                 <article class="experience-card">
-
                     <div class="experience-number">02</div>
-
                     <div>
                         <span class="experience-duration">6 Bulan</span>
-
                         <h3>Resto Beombo Lawas</h3>
-
                         <h4 id="exp-role-2">Kitchen Staff</h4>
-
                         <p>
                             Bertanggung jawab dalam persiapan bahan,
                             pengolahan makanan sesuai SOP, menjaga kebersihan
@@ -240,13 +262,10 @@
                             membantu pengelolaan persediaan bahan.
                         </p>
                     </div>
-
                 </article>
-
             </div>
 
         </section>
-
         <!-- EDUCATION -->
         <section id="education" class="section">
 
@@ -283,13 +302,33 @@
 
                     <h3 id="project-title">Personal Portfolio Website</h3>
 
-                    <p>
-                        Website portfolio pribadi yang dibuat untuk
-                        memperkenalkan pengalaman, kemampuan, pendidikan,
-                        dan informasi kontak secara profesional.
-                    </p>
+                    <p id="project-description">
+                Website portfolio pribadi yang saya bangun untuk
+                menampilkan profil, pengalaman kerja, pendidikan,
+                keterampilan, dan informasi kontak secara profesional.
+            </p>
+            <small id="project-tech">HTML • CSS • JavaScript • GitHub Pages</small>
+                    <div class="project-actions">
+                        <a
+                            class="project-link"
+                            href="https://miftahnursyaban62-dev.github.io/miftahnursyaban62-dev/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            id="project-link"
+                        >
+                            Lihat Project <span aria-hidden="true">↗</span>
+                        </a>
 
-                    <small id="project-tech">HTML • CSS • JavaScript</small>
+                        <a
+                            class="project-link project-github"
+                            href="https://github.com/miftahnursyaban62-dev/miftahnursyaban62-dev"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            id="project-github"
+                        >
+                            GitHub <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
 
                 </div>
 

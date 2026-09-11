@@ -196,6 +196,8 @@ const portfolioLanguages = {
         projectsTitle: "Proyek",
         projectType: "PROYEK PRIBADI",
         projectTitle: "Website Portfolio Pribadi",
+        projectLink: "Lihat Project ↗",
+        projectGithub: "GitHub ↗",
         projectText: "Website portfolio pribadi yang dibuat untuk memperkenalkan pengalaman, kemampuan, pendidikan, dan informasi kontak secara profesional.",
 
         contactLabel: "HUBUNGI SAYA",
@@ -253,6 +255,8 @@ const portfolioLanguages = {
         projectsTitle: "Projects",
         projectType: "PERSONAL PROJECT",
         projectTitle: "Personal Portfolio Website",
+        projectLink: "View Project ↗",
+        projectGithub: "GitHub ↗",
         projectText: "A personal portfolio website created to professionally showcase my experience, skills, education, and contact information.",
 
         contactLabel: "GET IN TOUCH",
@@ -302,7 +306,10 @@ function applyStaticPortfolioLanguage(t) {
 
     set("project-type", t.projectType);
     set("project-title", t.projectTitle);
+    set("project-description", t.projectText);
     set("project-tech", t.projectTech);
+    set("project-link", t.projectLink);
+    set("project-github", t.projectGithub);
 
     set("email-label", t.email);
     set("whatsapp-label", "WhatsApp");
@@ -406,3 +413,67 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.getItem("portfolio-language") || "id"
     );
 });
+
+
+/* ===== NAVBAR SCROLL EFFECT ===== */
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".navbar");
+
+    if (!navbar) return;
+
+    const updateNavbar = () => {
+        navbar.classList.toggle("navbar-scrolled", window.scrollY > 30);
+    };
+
+    updateNavbar();
+    window.addEventListener("scroll", updateNavbar, { passive: true });
+});
+
+/* ===== DARK / LIGHT MODE ===== */
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+
+    if (!themeToggle || !themeIcon) return;
+
+    const savedTheme = localStorage.getItem("portfolio-theme");
+
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+        themeIcon.textContent = "🌙";
+    }
+
+    themeToggle.addEventListener("click", () => {
+        const isLight = document.body.classList.toggle("light-mode");
+
+        themeIcon.textContent = isLight ? "🌙" : "☀️";
+        localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
+    });
+});
+
+/* ===== SKILL EXPAND CLICK ===== */
+document.addEventListener("DOMContentLoaded", () => {
+    const skillCards = document.querySelectorAll(".skill-expandable");
+
+    skillCards.forEach((card) => {
+        const trigger = card.querySelector(".skill-trigger");
+
+        if (!trigger) return;
+
+        trigger.addEventListener("click", () => {
+            const isActive = card.classList.contains("active");
+
+            skillCards.forEach((item) => {
+                item.classList.remove("active");
+                const btn = item.querySelector(".skill-trigger");
+                if (btn) btn.setAttribute("aria-expanded", "false");
+            });
+
+            if (!isActive) {
+                card.classList.add("active");
+                trigger.setAttribute("aria-expanded", "true");
+            }
+        });
+    });
+});
+
