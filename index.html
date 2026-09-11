@@ -10,6 +10,19 @@
     <title>Miftah Nursyaban | Portfolio</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Miftah Nursyaban",
+        "url": "https://miftahnursyaban62-dev.github.io/miftahnursyaban62-dev/",
+        "jobTitle": "Operator Produksi | Kitchen Staff",
+        "sameAs": ["https://github.com/miftahnursyaban62-dev"],
+        "knowsAbout": ["Production", "Kitchen Operations", "Stock Management", "Teamwork", "Adaptability"]
+    }
+    </script>
+
+    <link rel="canonical" href="https://miftahnursyaban62-dev.github.io/miftahnursyaban62-dev/">
 </head>
 
 <body>
@@ -18,14 +31,27 @@
     <header class="navbar">
         <a href="#home" class="logo">Miftah<span>.</span></a>
 
+        <div class="language-switcher">
+            <button type="button" class="lang-btn active" data-lang="id" onclick="applyPortfolioLanguage('id')">ID</button>
+            <button type="button" class="lang-btn" data-lang="en" onclick="applyPortfolioLanguage('en')">EN</button>
+        </div>
+
+        <button
+            class="menu-toggle"
+            aria-label="Buka menu"
+            aria-expanded="false"
+            onclick="this.nextElementSibling.classList.toggle('active'); this.setAttribute('aria-expanded', this.nextElementSibling.classList.contains('active'));">
+            ☰
+        </button>
+
         <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" id="nav-home">Home</a>
+            <a href="#about" id="nav-about">About</a>
+            <a href="#skills" id="nav-skills">Skills</a>
+            <a href="#experience" id="nav-experience">Experience</a>
+            <a href="#education" id="nav-education">Education</a>
+            <a href="#projects" id="nav-projects">Projects</a>
+            <a href="#contact" id="nav-contact">Contact</a>
         </nav>
     </header>
 
@@ -46,7 +72,7 @@
 
             <div class="hero-content">
 
-                <p class="hero-label">WELCOME TO MY PORTFOLIO</p>
+                <p class="hero-label" id="hero-label">WELCOME TO MY PORTFOLIO</p>
 
                 <h1>
                     Miftah<br>
@@ -57,7 +83,7 @@
                     <span id="typing-text"></span>
                 </h2>
 
-                <p class="hero-description">
+                <p class="hero-description" id="hero-description">
                     Saya adalah pribadi yang disiplin, mudah beradaptasi,
                     bertanggung jawab, dan memiliki kemauan untuk terus belajar
                     serta berkembang di lingkungan kerja.
@@ -65,12 +91,12 @@
 
                 <div class="hero-buttons">
 
-                    <a href="#contact" class="btn primary">
+                    <a href="#contact" class="btn primary" id="hero-contact">
                         Hubungi Saya
                     </a>
 
                     <a href="assets/cv/CV-Miftah-Nursyaban.pdf"
-                       class="btn secondary"
+                       class="btn secondary" id="hero-download"
                        download>
                         Download CV
                     </a>
@@ -85,7 +111,7 @@
         <section id="about" class="section">
 
             <div class="section-heading">
-                <p>ABOUT ME</p>
+                <p id="about-label">ABOUT ME</p>
                 <h2>Tentang Saya</h2>
             </div>
 
@@ -113,49 +139,49 @@
         <section id="skills" class="section">
 
             <div class="section-heading">
-                <p>MY ABILITIES</p>
-                <h2>Skills</h2>
+                <p id="skills-label">MY ABILITIES</p>
+                <h2 id="skills-title">Skills</h2>
             </div>
 
             <div class="skills-grid">
 
                 <div class="skill-card">
-                    <h3>Disiplin</h3>
+                    <h3 id="skill-1">Disiplin</h3>
                     <div class="skill-bar">
                         <span style="width: 90%;"></span>
                     </div>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Kerja Tim</h3>
+                    <h3 id="skill-2">Kerja Tim</h3>
                     <div class="skill-bar">
                         <span style="width: 88%;"></span>
                     </div>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Adaptasi</h3>
+                    <h3 id="skill-3">Adaptasi</h3>
                     <div class="skill-bar">
                         <span style="width: 90%;"></span>
                     </div>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Manajemen Stock</h3>
+                    <h3 id="skill-4">Manajemen Stock</h3>
                     <div class="skill-bar">
                         <span style="width: 82%;"></span>
                     </div>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Produksi</h3>
+                    <h3 id="skill-5">Produksi</h3>
                     <div class="skill-bar">
                         <span style="width: 85%;"></span>
                     </div>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Kitchen Operation</h3>
+                    <h3 id="skill-6">Kitchen Operation</h3>
                     <div class="skill-bar">
                         <span style="width: 80%;"></span>
                     </div>
@@ -169,7 +195,7 @@
         <section id="experience" class="section">
 
             <div class="section-heading">
-                <p>MY JOURNEY</p>
+                <p id="experience-label">MY JOURNEY</p>
                 <h2>Pengalaman Kerja</h2>
             </div>
 
@@ -184,7 +210,7 @@
 
                         <h3>PT Garyman Kreasi Indonesia</h3>
 
-                        <h4>Operator Produksi</h4>
+                        <h4 id="exp-role-1">Operator Produksi</h4>
 
                         <p>
                             Berpengalaman dalam menjalankan proses produksi,
@@ -205,7 +231,7 @@
 
                         <h3>Resto Beombo Lawas</h3>
 
-                        <h4>Kitchen Staff</h4>
+                        <h4 id="exp-role-2">Kitchen Staff</h4>
 
                         <p>
                             Bertanggung jawab dalam persiapan bahan,
@@ -225,7 +251,7 @@
         <section id="education" class="section">
 
             <div class="section-heading">
-                <p>EDUCATION</p>
+                <p id="education-label">EDUCATION</p>
                 <h2>Pendidikan</h2>
             </div>
 
@@ -235,7 +261,7 @@
 
                 <h3>SMK Negeri 4 Garut</h3>
 
-                <p>Agribisnis Ternak Unggas</p>
+                <p id="education-major">Agribisnis Ternak Unggas</p>
 
             </div>
 
@@ -245,17 +271,17 @@
         <section id="projects" class="section">
 
             <div class="section-heading">
-                <p>PORTFOLIO</p>
-                <h2>Projects</h2>
+                <p id="projects-label">PORTFOLIO</p>
+                <h2 id="projects-title">Projects</h2>
             </div>
 
             <div class="project-card">
 
                 <div class="project-content">
 
-                    <span>PERSONAL PROJECT</span>
+                    <span id="project-type">PERSONAL PROJECT</span>
 
-                    <h3>Personal Portfolio Website</h3>
+                    <h3 id="project-title">Personal Portfolio Website</h3>
 
                     <p>
                         Website portfolio pribadi yang dibuat untuk
@@ -263,7 +289,7 @@
                         dan informasi kontak secara profesional.
                     </p>
 
-                    <small>HTML • CSS • JavaScript</small>
+                    <small id="project-tech">HTML • CSS • JavaScript</small>
 
                 </div>
 
@@ -275,7 +301,7 @@
         <section id="contact" class="section contact-section">
 
             <div class="section-heading">
-                <p>GET IN TOUCH</p>
+                <p id="contact-label">GET IN TOUCH</p>
                 <h2>Hubungi Saya</h2>
             </div>
 
@@ -290,11 +316,11 @@
                 <div class="contact-links">
 
                     <a href="mailto:miftahnursyaban62@gmail.com">
-                        ✉ Email
+                        ✉ <span id="email-label">Email</span>
                     </a>
 
                     <a href="https://wa.me/6285189906908" target="_blank">
-                        WhatsApp
+                        <span id="whatsapp-label">WhatsApp</span>
                     </a>
 
                 </div>
@@ -310,7 +336,7 @@
         <p>© 2026 Miftah Nursyaban. All Rights Reserved.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=2"></script>
 
 </body>
 </html>
