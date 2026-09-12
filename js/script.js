@@ -203,6 +203,7 @@ const portfolioLanguages = {
         contactLabel: "HUBUNGI SAYA",
         contactTitle: "Hubungi Saya",
         contactText: "Jika Anda ingin menghubungi saya mengenai peluang kerja atau informasi lainnya, silakan menghubungi melalui kontak berikut.",
+        locationLabel: "Lokasi",
         footer: "Semua Hak Dilindungi.",
 
         typing: [
@@ -262,6 +263,7 @@ const portfolioLanguages = {
         contactLabel: "GET IN TOUCH",
         contactTitle: "Contact Me",
         contactText: "If you would like to contact me regarding job opportunities or other information, please reach me through the following contact details.",
+        locationLabel: "Location",
         footer: "All Rights Reserved.",
 
         typing: [
@@ -379,6 +381,11 @@ function applyPortfolioLanguage(lang) {
     set("#contact .section-heading p", t.contactLabel);
     set("#contact .section-heading h2", t.contactTitle);
     set("#contact .contact-card > p", t.contactText);
+
+    const locationLabel = document.getElementById("contact-location-label");
+    if (locationLabel) {
+        locationLabel.textContent = t.locationLabel;
+    }
 
     const footer = document.querySelector("footer p");
     if (footer) {
