@@ -484,3 +484,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+/* ===== ACTIVE NAVBAR ON SCROLL ===== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(".navbar nav a");
+
+    const sections = Array.from(navLinks)
+        .map(link => {
+            const id = link.getAttribute("href");
+            return id && id.startsWith("#")
+                ? document.querySelector(id)
+                : null;
+        })
+        .filter(Boolean);
+
+    if (!navLinks.length || !sections.length) return;
+
+    const updateActiveNav = () => {
+        const scrollPosition = window.scrollY + 140;
+
+        let currentSection = sections[0];
+
+        sections.forEach(section => {
+            if (section.offsetTop <= scrollPosition) {
+                currentSection = section;
+            }
+        });
+
+        navLinks.forEach(link => {
+            const target = link.getAttribute("href");
+            link.classList.toggle(
+                "active",
+                target === `#${currentSection.id}`
+            );
+        });
+    };
+
+    window.addEventListener("scroll", updateActiveNav, {
+        passive: true
+    });
+
+    updateActiveNav();
+});
+

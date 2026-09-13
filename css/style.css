@@ -150,10 +150,6 @@ img {
     color: #fff;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-}
-
 
 /* =========================
    PROFILE IMAGE
@@ -1344,20 +1340,6 @@ img {
     padding: 7px;
     border-radius: 32px;
     overflow: hidden;
-}
-
-.hero-image .profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-content .hero-description {
-    max-width: 650px;
-}
-
-.hero-content .hero-buttons {
-    justify-content: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -2764,10 +2746,6 @@ body.light-mode .language-switcher .lang-btn.active {
     box-shadow: 0 0 12px rgba(77,163,255,.10);
 }
 
-body.light-mode .language-switcher .lang-btn:hover {
-    color: #172033 !important;
-}
-
 @media (prefers-reduced-motion: reduce) {
     .language-switcher .lang-btn {
         transition: none;
@@ -3289,5 +3267,193 @@ body.light-mode .map-container {
 
     .location-info strong {
         font-size: .86rem;
+    }
+}
+
+/* ===== ACTIVE NAVBAR ===== */
+
+.navbar nav a {
+    position: relative;
+    transition:
+        color .25s ease,
+        opacity .25s ease;
+}
+
+.navbar nav a.active {
+    color: #4da3ff !important;
+}
+
+.navbar nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #4da3ff;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(77,163,255,.55);
+}
+
+body.light-mode .navbar nav a.active {
+    color: #4da3ff !important;
+}
+
+@media (max-width: 600px) {
+    .navbar nav a.active::after {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navbar nav a {
+        transition: none;
+    }
+}
+
+/* ===== CONTACT CTA PREMIUM ===== */
+
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 18px;
+    border: 1px solid rgba(77,163,255,.14);
+    border-radius: 12px;
+    background: rgba(77,163,255,.04);
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.contact-links a:hover {
+    transform: translateY(-3px);
+    border-color: rgba(77,163,255,.35);
+    background: rgba(77,163,255,.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,.16);
+}
+
+.contact-links a:last-child {
+    color: #4da3ff;
+}
+
+body.light-mode .contact-links a {
+    background: rgba(77,163,255,.035);
+    border-color: rgba(20,35,60,.10);
+}
+
+body.light-mode .contact-links a:hover {
+    border-color: rgba(77,163,255,.30);
+    background: rgba(77,163,255,.07);
+    box-shadow: 0 10px 25px rgba(20,35,60,.08);
+}
+
+@media (max-width: 600px) {
+    .contact-links {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-links a {
+        transition: none;
+    }
+}
+
+/* ===== PREMIUM MICRO INTERACTIONS ===== */
+
+.btn,
+.project-link,
+.contact-links a,
+.theme-toggle,
+.menu-toggle,
+.lang-btn {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn {
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background-color .25s ease,
+        border-color .25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn:active,
+.project-link:active,
+.contact-links a:active,
+.theme-toggle:active,
+.menu-toggle:active,
+.lang-btn:active {
+    transform: scale(.96);
+}
+
+.project-link,
+.contact-links a {
+    will-change: transform;
+}
+
+.project-link:hover {
+    transform: translateX(4px);
+}
+
+.contact-links a:hover {
+    transform: translateY(-3px);
+}
+
+.theme-toggle:hover,
+.menu-toggle:hover {
+    transform: translateY(-2px);
+}
+
+.lang-btn {
+    transition:
+        color .25s ease,
+        background-color .25s ease,
+        transform .2s ease;
+}
+
+.lang-btn:hover {
+    transform: translateY(-1px);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #4da3ff;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn,
+    .project-link,
+    .contact-links a,
+    .theme-toggle,
+    .menu-toggle,
+    .lang-btn {
+        transition: none;
+    }
+
+    .btn:hover,
+    .project-link:hover,
+    .contact-links a:hover,
+    .theme-toggle:hover,
+    .menu-toggle:hover,
+    .lang-btn:hover {
+        transform: none;
     }
 }
