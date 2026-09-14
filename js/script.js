@@ -393,7 +393,10 @@ function applyPortfolioLanguage(lang) {
     }
 
     document.querySelectorAll(".lang-btn").forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.lang === lang);
+        const isActive = btn.dataset.lang === lang;
+
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-pressed", String(isActive));
     });
 
     localStorage.setItem("portfolio-language", lang);
@@ -448,12 +451,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (savedTheme === "light") {
         document.body.classList.add("light-mode");
         themeIcon.textContent = "🌙";
+        themeToggle.setAttribute("aria-label", "Aktifkan mode gelap");
+    } else {
+        themeToggle.setAttribute("aria-label", "Aktifkan mode terang");
     }
 
     themeToggle.addEventListener("click", () => {
         const isLight = document.body.classList.toggle("light-mode");
 
         themeIcon.textContent = isLight ? "🌙" : "☀️";
+        themeToggle.setAttribute(
+            "aria-label",
+            isLight ? "Aktifkan mode gelap" : "Aktifkan mode terang"
+        );
+
         localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
     });
 });
